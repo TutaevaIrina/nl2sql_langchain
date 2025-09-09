@@ -1,0 +1,28 @@
+# Python cache / compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+.envrc
+
+# Local environment variables
+.env
+
+# Poetry
+poetry.lock
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/
+
+# VSCode settings
+.vscode/
+
+# macOS / Windows system files
+.DS_Store
+Thumbs.db
