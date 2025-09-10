@@ -1,7 +1,19 @@
-# NL2SQL Application
+# NL2SQL-LangChain
 
-This project demonstrates a **Natural Language to SQL (NL2SQL)** system.  
-It allows users to ask questions in natural language and automatically generates SQL queries against different datasets (**crimes**, **hospitality**, **happiness**).
+This project evaluates the **Natural Language to SQL (NL2SQL)** capabilities of **LangChain**.  
+It allows users to ask questions in natural language and automatically generates SQL queries against different datasets (**crimes**, **hospitality**, **happiness**).  
+
+The goal is to compare and test **LangChain’s SQLAgent** and **SQLDatabaseChain** modules in terms of how well they can query structured data from different databases.
+
+---
+
+## Usage
+
+In the Streamlit frontend, users can:
+- Select the LangChain module (SQLAgent or SQLDatabaseChain)
+- Choose one of the available databases (Crimes, Hospitality, Happiness)
+- Enter natural language queries and view both the generated SQL and the results
+- Inspect verbose logs for debugging and comparison
 
 ---
 
@@ -19,8 +31,7 @@ It allows users to ask questions in natural language and automatically generates
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone https://github.com/TutaevaIrina/nl2sql_langchain
 ```
 
 ### 2. Start the database with Docker
@@ -31,9 +42,9 @@ docker-compose up
 
 Default credentials:
 
-User: root
+`User: root`
 
-Password: nl2sql
+`Password: nl2sql`
 
 ### 3. Install dependencies
 
@@ -56,7 +67,8 @@ Load CSV data into the corresponding tables
 ### 5. Configure environment variables
 
 Create a `.env` file in the project root and add your OpenAI API key:
-OPENAI_KEY=your-openai-api-key
+
+`OPENAI_KEY=your-openai-api-key`
 
 This key is required for the NL2SQL application to use the LLM (GPT-4o).
 
@@ -64,6 +76,26 @@ This key is required for the NL2SQL application to use the LLM (GPT-4o).
 ```bash
 streamlit run app.py
 ```
+
+## Data 
+
+The required crime dataset is too large to be stored directly in this repository. Please download it manually from Kaggle and place it in the specified directory: 
+
+### Crimes Data Source: 
+
+Kaggle – 2019 Crimes Data (https://www.kaggle.com/datasets/edwardotieno/2019-crimes-data)
+
+File: crimes-2001-to-present.csv
+
+Location: data/crimes/ 
+
+### Happiness Data
+
+Already included in the repository (no external download required) 
+
+### Hospitality Data 
+
+Already included in the repository (no external download required)
 
 
 ## Project Structure
